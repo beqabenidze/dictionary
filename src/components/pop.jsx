@@ -12,12 +12,12 @@ function Pop() {
   const context = useContext(Context);
   return (
     <div
-      className={`absolute  w-24 rounded p-2 bg-white transition-all duration-1000 ease cursor-pointer ${
+      className={`absolute z-[99] w-24 rounded p-2 bg-white transition-all duration-1000 ease cursor-pointer ${
         context.popVisible ? "top-12" : "-top-28 "
       }  `}
     >
       {fonts.map((font) => {
-        return <h3>{font.name}</h3>;
+        return <h3 key={Math.random()}>{font.name}</h3>;
       })}
     </div>
   );

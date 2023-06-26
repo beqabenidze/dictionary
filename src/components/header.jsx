@@ -29,7 +29,7 @@ function Header() {
           <Pop />
         </div>
 
-        <hr className="bg-gray-200 w-0.5 h-4/5 m-1 border-none "></hr>
+        <hr className="bg-hr w-[1px] h-4/5 m-1 border-none "></hr>
 
         <label className="w-10 h-5 relative">
           <input type="checkbox" className="hidden" />
