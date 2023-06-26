@@ -18,7 +18,7 @@ function Header() {
             context.setPopVisible(!context.popVisible);
           }}
         >
-          <h3 className="text">Mono</h3>
+          <h3 className="text">{context.font}</h3>
           <img
             src={arrow}
             className={`transform ${

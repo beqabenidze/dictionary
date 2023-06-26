@@ -7,9 +7,12 @@ import Word from "./components/word";
 function App() {
   const [theme, setTheme] = useState();
   const [popVisible, setPopVisible] = useState(false);
+  const [font, setFont] = useState("Sofia");
   return (
-    <Context.Provider value={{ theme, setTheme, popVisible, setPopVisible }}>
-      <div className=" min-h-screen p-3 ">
+    <Context.Provider
+      value={{ theme, setTheme, popVisible, setPopVisible, font, setFont }}
+    >
+      <div className={`min-h-screen p-3 font-${font}`}>
         <Header />
         <Search />
         <Word />
