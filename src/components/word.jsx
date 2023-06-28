@@ -5,10 +5,10 @@ import axios from "axios";
 
 function Word() {
   return (
-    <div className="bg-white mt-4 ">
+    <div className="bg-base-100 mt-4 transition-all duration-200 ease-in">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-[32px]">House</h1>
+          <h1 className="text-[32px] ">House</h1>
           <h4 className="text-customPurple">/ˈkiːbɔːd/</h4>
         </div>
         <img src={play} className="w-14 h-14" />

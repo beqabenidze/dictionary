@@ -3,11 +3,18 @@ import { useState } from "react";
 import { Context } from "./context";
 import Search from "./components/search";
 import Word from "./components/word";
+import { useEffect } from "react";
 
 function App() {
-  const [theme, setTheme] = useState();
+  const [theme, setTheme] = useState("light");
   const [popVisible, setPopVisible] = useState(false);
   const [font, setFont] = useState("Sofia");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    document.querySelector("html").setAttribute("data-theme", theme);
+  }, [theme]);
+
   return (
     <Context.Provider
       value={{ theme, setTheme, popVisible, setPopVisible, font, setFont }}

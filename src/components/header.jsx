@@ -8,8 +8,15 @@ import { Context } from "../context";
 
 function Header() {
   const context = useContext(Context);
+
+  const handleTheme = () => {
+    context.theme == "dark"
+      ? context.setTheme("light")
+      : context.setTheme("dark");
+  };
+
   return (
-    <div className="flex justify-between bg-white">
+    <div className="flex justify-between bg-base-100 transition-all duration-200 ease-in">
       <img src={logo} />
       <div className="flex gap-5 relative items-center">
         <div
@@ -33,8 +40,14 @@ function Header() {
 
         <label className="w-10 h-5 relative">
           <input type="checkbox" className="hidden" />
-          <div className="bg-gray-500 absolute top-0 left-0 w-10 h-5 rounded-full">
-            <div className="absolute top-0.5 left-1 w-4 h-4 bg-white rounded-full"></div>
+          <div
+            className="bg-gray-500 absolute top-0 left-0 w-10 h-5 rounded-full"
+            onClick={() => handleTheme()}
+          >
+            <div
+              className="absolute top-0.5 left-1 w-4 h-4 bg-white rounded-full transition-all duration-200 ease-in"
+              style={{ left: context.theme == "dark" ? "20px" : "2px" }}
+            ></div>
           </div>
         </label>
 
