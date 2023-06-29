@@ -41,7 +41,7 @@ function Header() {
         <label className="w-10 h-5 relative">
           <input type="checkbox" className="hidden" />
           <div
-            className="bg-gray-500 absolute top-0 left-0 w-10 h-5 rounded-full"
+            className="bg-purple-300 absolute top-0 left-0 w-10 h-5 rounded-full cursor-pointer"
             onClick={() => handleTheme()}
           >
             <div

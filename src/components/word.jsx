@@ -2,13 +2,33 @@ import React from "react";
 import play from "../assets/icon-play.svg";
 import windoww from "../assets/icon-new-window.svg";
 import axios from "axios";
+import { useState } from "react";
+import { useContext } from "react";
+import { Context } from "../context";
 
 function Word() {
+  const [newWord, setNewWord] = useState(null);
+  const context = useContext(Context);
+
+  const getWord = () => {
+    axios
+      .get(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${context?.searchWord}`
+      )
+      .then((response) => {
+        setNewWord(response.data[0]);
+        console.log(response.data[0].word);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="bg-base-100 mt-4 transition-all duration-200 ease-in">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-[32px] ">House</h1>
+          <h1 className="text-[32px] ">{newWord?.word}</h1>
           <h4 className="text-customPurple">/ˈkiːbɔːd/</h4>
         </div>
         <img src={play} className="w-14 h-14" />

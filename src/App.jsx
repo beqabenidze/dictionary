@@ -9,6 +9,7 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [popVisible, setPopVisible] = useState(false);
   const [font, setFont] = useState("Sofia");
+  const [searchWord, setSearchWord] = useState(null);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -17,7 +18,16 @@ function App() {
 
   return (
     <Context.Provider
-      value={{ theme, setTheme, popVisible, setPopVisible, font, setFont }}
+      value={{
+        theme,
+        setTheme,
+        popVisible,
+        setPopVisible,
+        font,
+        setFont,
+        searchWord,
+        setSearchWord,
+      }}
     >
       <div className={`min-h-screen p-3 font-${font}`}>
         <Header />
