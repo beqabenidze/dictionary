@@ -10,7 +10,7 @@ function App() {
   const [popVisible, setPopVisible] = useState(false);
   const [font, setFont] = useState("Sofia");
   const [searchWord, setSearchWord] = useState(null);
-
+  const [valid, setValid] = useState(false);
   useEffect(() => {
     localStorage.setItem("theme", theme);
     document.querySelector("html").setAttribute("data-theme", theme);
@@ -27,6 +27,8 @@ function App() {
         setFont,
         searchWord,
         setSearchWord,
+        valid,
+        setValid,
       }}
     >
       <div className={`min-h-screen p-3 font-${font}`}>
